@@ -391,12 +391,12 @@ NSString *const SRHTTPResponseErrorKey = @"HTTPResponseStatusCode";
         [self _failWithError:error];
         return;
     }
-
+   /*
     if(![self _checkHandshake:_receivedHTTPHeaders]) {
         NSError *error = SRErrorWithCodeDescription(2133, @"Invalid Sec-WebSocket-Accept response.");
         [self _failWithError:error];
         return;
-    }
+    } */
 
     NSString *negotiatedProtocol = CFBridgingRelease(CFHTTPMessageCopyHeaderFieldValue(_receivedHTTPHeaders, CFSTR("Sec-WebSocket-Protocol")));
     if (negotiatedProtocol) {
